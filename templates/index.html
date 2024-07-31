@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake News Detector</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fake News Detector</h1>
+    <form action="/predict" method="post">
+        <label for="Articel_titel">Title:</label><br>
+        <textarea id="Articel_titel" name="Articel_titel" placeholder="Enter your title here" rows="5" cols="40"></textarea><br>
+        <label for="Articel_text">Text:</label><br>
+        <textarea id="Articel_text" name="Articel_text" placeholder="Enter your text here" rows="5" cols="40"></textarea><br>
+        <button type="submit">Check</button>
+    </form>
+    {% if prediction %}
+    <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
